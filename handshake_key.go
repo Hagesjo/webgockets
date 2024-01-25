@@ -1,4 +1,4 @@
-package websockets
+package webgockets
 
 import (
 	"crypto/rand"
