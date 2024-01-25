@@ -33,4 +33,4 @@ for {
 ## Autobahn Testsuite
 
 This implementation passes all basic cases in the test suite (except for UTF-8 checks, I deemed that unnecessary strict).
-The report is [here](wstest/reports/clients/index.html)
+The report is [here](https://hagesjo.github.io/webgockets/)
