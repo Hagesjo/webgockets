@@ -8,7 +8,7 @@
    "createWirelog": true,
    "description": "Send text message message with payload of length 1 * 2**20 (1M). Sent out data in chops of 256 octets.",
    "droppedByMe": true,
-   "duration": 281,
+   "duration": 282,
    "expectation": "Receive echo'ed text message (with payload as sent).",
    "expected": {},
    "expectedClose": {
@@ -19,8 +19,8 @@
       "requireClean": true
    },
    "failedByMe": false,
-   "httpRequest": "GET /runCase?case=134&agent=webgocket HTTP/1.1\r\nHost: 127.0.0.1:9001\r\nUser-Agent: Go-http-client/1.1\r\nConnection: Upgrade\r\nSec-Websocket-Key: UL+ORwG5BYludhi7XUJ8Pw==\r\nSec-Websocket-Protocol: chat, superchat\r\nSec-Websocket-Version: 13\r\nUpgrade: websocket\r\nAccept-Encoding: gzip\r\n\r\n",
-   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nServer: AutobahnTestSuite/0.8.2-0.10.9\r\nX-Powered-By: AutobahnPython/0.10.9\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: PCLei2Ho8fjtraPe3vO4I/DmXUg=\r\n\r\n",
+   "httpRequest": "GET /runCase?case=134&agent=webgocket HTTP/1.1\r\nHost: 127.0.0.1:9001\r\nUser-Agent: Go-http-client/1.1\r\nConnection: Upgrade\r\nSec-Websocket-Key: Jy6qK/fLUTsrINJ2mdUDog==\r\nSec-Websocket-Protocol: chat, superchat\r\nSec-Websocket-Version: 13\r\nUpgrade: websocket\r\nAccept-Encoding: gzip\r\n\r\n",
+   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nServer: AutobahnTestSuite/0.8.2-0.10.9\r\nX-Powered-By: AutobahnPython/0.10.9\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: bskUardlwV/LFzXChrvY9dPMh64=\r\n\r\n",
    "id": "9.5.3",
    "isServer": true,
    "localCloseCode": 1000,
@@ -43,7 +43,7 @@
       "32782": 1,
       "65536": 15
    },
-   "started": "2024-01-25T21:06:50.791Z",
+   "started": "2024-01-25T23:22:02.021Z",
    "trafficStats": null,
    "txFrameStats": {
       "1": 1,
@@ -106,7 +106,7 @@
          "RO",
          [
             18,
-            "888a75fea04f7616e7201c90c76f1489c136"
+            "888a2df7e2812e1fa5ee449985a14c8083f8"
          ]
       ],
       [
@@ -119,7 +119,7 @@
          true,
          0,
          true,
-         "75fea04f"
+         "2df7e281"
       ]
    ]
 }

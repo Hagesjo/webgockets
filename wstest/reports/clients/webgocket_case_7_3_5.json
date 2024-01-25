@@ -8,7 +8,7 @@
    "createWirelog": true,
    "description": "Send a close frame with close code and close reason of maximum length (123)",
    "droppedByMe": true,
-   "duration": 6,
+   "duration": 5,
    "expectation": "Clean close with normal code.",
    "expected": {
       "OK": []
@@ -21,8 +21,8 @@
       "requireClean": true
    },
    "failedByMe": false,
-   "httpRequest": "GET /runCase?case=75&agent=webgocket HTTP/1.1\r\nHost: 127.0.0.1:9001\r\nUser-Agent: Go-http-client/1.1\r\nConnection: Upgrade\r\nSec-Websocket-Key: NV2RvrnHIbyOx+qwuWgixQ==\r\nSec-Websocket-Protocol: chat, superchat\r\nSec-Websocket-Version: 13\r\nUpgrade: websocket\r\nAccept-Encoding: gzip\r\n\r\n",
-   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nServer: AutobahnTestSuite/0.8.2-0.10.9\r\nX-Powered-By: AutobahnPython/0.10.9\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: LpnwEzLxlf8Rk5YGCDQ4OkrEidA=\r\n\r\n",
+   "httpRequest": "GET /runCase?case=75&agent=webgocket HTTP/1.1\r\nHost: 127.0.0.1:9001\r\nUser-Agent: Go-http-client/1.1\r\nConnection: Upgrade\r\nSec-Websocket-Key: LzGy18B1418r0iUowgZbXA==\r\nSec-Websocket-Protocol: chat, superchat\r\nSec-Websocket-Version: 13\r\nUpgrade: websocket\r\nAccept-Encoding: gzip\r\n\r\n",
+   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nServer: AutobahnTestSuite/0.8.2-0.10.9\r\nX-Powered-By: AutobahnPython/0.10.9\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: WaJP0dzxnfbJHWTLBsaouDRW+gg=\r\n\r\n",
    "id": "7.3.5",
    "isServer": true,
    "localCloseCode": 1000,
@@ -41,7 +41,7 @@
       "18": 1,
       "280": 1
    },
-   "started": "2024-01-25T21:06:32.329Z",
+   "started": "2024-01-25T23:21:46.001Z",
    "trafficStats": null,
    "txFrameStats": {
       "8": 1
@@ -101,7 +101,7 @@
          "RO",
          [
             18,
-            "888ab21d1e8db1f559e2db7379add36a7ff4"
+            "888acfd756cdcc3f11a2a6b931edaea037b4"
          ]
       ],
       [
@@ -114,7 +114,7 @@
          true,
          0,
          true,
-         "b21d1e8d"
+         "cfd756cd"
       ]
    ]
 }

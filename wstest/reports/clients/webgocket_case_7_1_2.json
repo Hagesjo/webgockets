@@ -8,7 +8,7 @@
    "createWirelog": true,
    "description": "Send two close frames",
    "droppedByMe": true,
-   "duration": 6,
+   "duration": 7,
    "expectation": "Clean close with normal code. Second close frame ignored.",
    "expected": {
       "OK": []
@@ -21,8 +21,8 @@
       "requireClean": true
    },
    "failedByMe": false,
-   "httpRequest": "GET /runCase?case=66&agent=webgocket HTTP/1.1\r\nHost: 127.0.0.1:9001\r\nUser-Agent: Go-http-client/1.1\r\nConnection: Upgrade\r\nSec-Websocket-Key: zkr0A0eUe6fIX8BG7mpgUg==\r\nSec-Websocket-Protocol: chat, superchat\r\nSec-Websocket-Version: 13\r\nUpgrade: websocket\r\nAccept-Encoding: gzip\r\n\r\n",
-   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nServer: AutobahnTestSuite/0.8.2-0.10.9\r\nX-Powered-By: AutobahnPython/0.10.9\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: yVLlYUaBRtbybBTfcZBEzfzai6U=\r\n\r\n",
+   "httpRequest": "GET /runCase?case=66&agent=webgocket HTTP/1.1\r\nHost: 127.0.0.1:9001\r\nUser-Agent: Go-http-client/1.1\r\nConnection: Upgrade\r\nSec-Websocket-Key: wGvfrtncD0X1QVTGWdwYFA==\r\nSec-Websocket-Protocol: chat, superchat\r\nSec-Websocket-Version: 13\r\nUpgrade: websocket\r\nAccept-Encoding: gzip\r\n\r\n",
+   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nServer: AutobahnTestSuite/0.8.2-0.10.9\r\nX-Powered-By: AutobahnPython/0.10.9\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: lTQNJMzYnh6Vib4loBqo8agnN1k=\r\n\r\n",
    "id": "7.1.2",
    "isServer": true,
    "localCloseCode": 1000,
@@ -41,7 +41,7 @@
       "36": 1,
       "280": 1
    },
-   "started": "2024-01-25T21:06:32.191Z",
+   "started": "2024-01-25T23:21:45.866Z",
    "trafficStats": null,
    "txFrameStats": {
       "8": 2
@@ -124,7 +124,7 @@
          "RO",
          [
             36,
-            "888af1344b3cf2dc0c53985a2c1c90432a45888ac576feaec69eb9c1ac18998ea4019fd7"
+            "888ade602740dd88602fb70e4060bf174639888aa455a1e5a7bde68acd3bc6c5c522c09c"
          ]
       ],
       [
@@ -137,7 +137,7 @@
          true,
          0,
          true,
-         "f1344b3c"
+         "de602740"
       ]
    ]
 }

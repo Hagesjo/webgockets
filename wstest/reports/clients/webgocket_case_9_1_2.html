@@ -202,7 +202,7 @@ pre.wirelog_tcp_closed_by_peer {color: #fff; margin: 0; background-color: #000; 
       <center><a href="http://autobahn.ws/testsuite" title="Autobahn WebSocket Testsuite"><img src="http://autobahn.ws/static/img/ws_protocol_test_report.png"          border="0" width="820" height="46" alt="Autobahn WebSocket Testsuite Report"></img></a></center>
       <center><a href="http://autobahn.ws"           title="Autobahn WebSocket">          <img src="http://autobahn.ws/static/img/ws_protocol_test_report_autobahn.png" border="0" width="300" height="68" alt="Autobahn WebSocket">                 </img></a></center>
       <br/>
-      <p class="case case_ok">webgocket - <span style="font-size: 1.3em;"><b>Case 9.1.2</b></span> : Pass - <span style="font-size: 0.9em;"><b>34</b> ms @ 2024-01-25T21:06:35.034Z</a></p>
+      <p class="case case_ok">webgocket - <span style="font-size: 1.3em;"><b>Case 9.1.2</b></span> : Pass - <span style="font-size: 0.9em;"><b>30</b> ms @ 2024-01-25T23:21:48.438Z</a></p>
       <p class="case_text_block case_desc"><b>Case Description</b><br/><br/>Send text message message with payload of length 256 * 2**10 (256k).</p>
       <p class="case_text_block case_expect"><b>Case Expectation</b><br/><br/>Receive echo'ed text message (with payload as sent).</p>
 
@@ -218,7 +218,7 @@ pre.wirelog_tcp_closed_by_peer {color: #fff; margin: 0; background-color: #000; 
 Host: 127.0.0.1:9001
 User-Agent: Go-http-client/1.1
 Connection: Upgrade
-Sec-Websocket-Key: NGzn0z2UBO+RBaraQK7hfQ==
+Sec-Websocket-Key: QHec8kNQSGXVmMIh4SNCuw==
 Sec-Websocket-Protocol: chat, superchat
 Sec-Websocket-Version: 13
 Upgrade: websocket
@@ -228,7 +228,7 @@ Server: AutobahnTestSuite/0.8.2-0.10.9
 X-Powered-By: AutobahnPython/0.10.9
 Upgrade: WebSocket
 Connection: Upgrade
-Sec-WebSocket-Accept: 7lQKNhq161VZ1sVn2O3hLe+RU0c=</pre>
+Sec-WebSocket-Accept: bUzboD5mwahAl9gh3/wVRhr+0Dk=</pre>
       <br/><hr/>
       <h2>Closing Behavior</h2>
       <table>
@@ -254,10 +254,11 @@ Sec-WebSocket-Accept: 7lQKNhq161VZ1sVn2O3hLe+RU0c=</pre>
          <tr class="stats_row"><td>18</td><td>1</td><td>18</td></tr>
          <tr class="stats_row"><td>281</td><td>1</td><td>281</td></tr>
          <tr class="stats_row"><td>14480</td><td>1</td><td>14480</td></tr>
-         <tr class="stats_row"><td>22110</td><td>1</td><td>22110</td></tr>
-         <tr class="stats_row"><td>28960</td><td>1</td><td>28960</td></tr>
-         <tr class="stats_row"><td>65536</td><td>3</td><td>196608</td></tr>
-         <tr class="stats_total"><td>Total</td><td>8</td><td>262457</td></tr>
+         <tr class="stats_row"><td>18288</td><td>1</td><td>18288</td></tr>
+         <tr class="stats_row"><td>32768</td><td>2</td><td>65536</td></tr>
+         <tr class="stats_row"><td>32782</td><td>1</td><td>32782</td></tr>
+         <tr class="stats_row"><td>65536</td><td>2</td><td>131072</td></tr>
+         <tr class="stats_total"><td>Total</td><td>9</td><td>262457</td></tr>
       </table>
       <h3>Octets Transmitted by Chop Size</h3>
       <table>
@@ -292,8 +293,8 @@ Sec-WebSocket-Accept: 7lQKNhq161VZ1sVn2O3hLe+RU0c=</pre>
          <pre class="wirelog_tx_frame">003 TX FRAME : OPCODE=8, FIN=True, RSV=0, PAYLOAD-LEN=2, MASK=None, PAYLOAD-REPEAT-LEN=None, CHOPSIZE=None, SYNC=False</pre>
          <pre class="wirelog_tx_frame">               0x03e8</pre>
          <pre class="wirelog_tx_octets">004 TX OCTETS: 880203e8</pre>
-         <pre class="wirelog_rx_octets">005 RX OCTETS: 888a9b2b374698c37029f2455066fa5c563f</pre>
-         <pre class="wirelog_rx_frame">006 RX FRAME : OPCODE=8, FIN=True, RSV=0, PAYLOAD-LEN=10, MASKED=True, MASK=3962326233373436</pre>
+         <pre class="wirelog_rx_octets">005 RX OCTETS: 888ab6489742b5a0d02ddf26f062d73ff63b</pre>
+         <pre class="wirelog_rx_frame">006 RX FRAME : OPCODE=8, FIN=True, RSV=0, PAYLOAD-LEN=10, MASKED=True, MASK=6236343839373432</pre>
          <pre class="wirelog_rx_frame">               0x03e8476f696e67206177</pre>
          <pre class="wirelog_tcp_closed_by_me">007 TCP DROPPED BY ME</pre>
       </div>

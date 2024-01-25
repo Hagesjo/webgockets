@@ -202,7 +202,7 @@ pre.wirelog_tcp_closed_by_peer {color: #fff; margin: 0; background-color: #000; 
       <center><a href="http://autobahn.ws/testsuite" title="Autobahn WebSocket Testsuite"><img src="http://autobahn.ws/static/img/ws_protocol_test_report.png"          border="0" width="820" height="46" alt="Autobahn WebSocket Testsuite Report"></img></a></center>
       <center><a href="http://autobahn.ws"           title="Autobahn WebSocket">          <img src="http://autobahn.ws/static/img/ws_protocol_test_report_autobahn.png" border="0" width="300" height="68" alt="Autobahn WebSocket">                 </img></a></center>
       <br/>
-      <p class="case case_ok">webgocket - <span style="font-size: 1.3em;"><b>Case 9.3.4</b></span> : Pass - <span style="font-size: 0.9em;"><b>324</b> ms @ 2024-01-25T21:06:42.968Z</a></p>
+      <p class="case case_ok">webgocket - <span style="font-size: 1.3em;"><b>Case 9.3.4</b></span> : Pass - <span style="font-size: 0.9em;"><b>311</b> ms @ 2024-01-25T23:21:55.258Z</a></p>
       <p class="case_text_block case_desc"><b>Case Description</b><br/><br/>Send fragmented text message message with message payload of length 4 * 2**20 (4M). Sent out in fragments of 4k.</p>
       <p class="case_text_block case_expect"><b>Case Expectation</b><br/><br/>Receive echo'ed text message (with payload as sent).</p>
 
@@ -218,7 +218,7 @@ pre.wirelog_tcp_closed_by_peer {color: #fff; margin: 0; background-color: #000; 
 Host: 127.0.0.1:9001
 User-Agent: Go-http-client/1.1
 Connection: Upgrade
-Sec-Websocket-Key: jJ3TxokjhyzXiVdTgLxEtg==
+Sec-Websocket-Key: uNAPzGWqRKNBzFeQwQO9bQ==
 Sec-Websocket-Protocol: chat, superchat
 Sec-Websocket-Version: 13
 Upgrade: websocket
@@ -228,7 +228,7 @@ Server: AutobahnTestSuite/0.8.2-0.10.9
 X-Powered-By: AutobahnPython/0.10.9
 Upgrade: WebSocket
 Connection: Upgrade
-Sec-WebSocket-Accept: BKr1C2HvcjQXjTltdn32ixsQmrc=</pre>
+Sec-WebSocket-Accept: o+A1UVWHsoq51v/bzIVkPZqdNy4=</pre>
       <br/><hr/>
       <h2>Closing Behavior</h2>
       <table>
@@ -254,8 +254,8 @@ Sec-WebSocket-Accept: BKr1C2HvcjQXjTltdn32ixsQmrc=</pre>
          <tr class="stats_row"><td>18</td><td>1</td><td>18</td></tr>
          <tr class="stats_row"><td>281</td><td>1</td><td>281</td></tr>
          <tr class="stats_row"><td>14480</td><td>1</td><td>14480</td></tr>
-         <tr class="stats_row"><td>20662</td><td>1</td><td>20662</td></tr>
-         <tr class="stats_row"><td>30408</td><td>1</td><td>30408</td></tr>
+         <tr class="stats_row"><td>21198</td><td>1</td><td>21198</td></tr>
+         <tr class="stats_row"><td>29872</td><td>1</td><td>29872</td></tr>
          <tr class="stats_row"><td>65536</td><td>63</td><td>4128768</td></tr>
          <tr class="stats_total"><td>Total</td><td>68</td><td>4194617</td></tr>
       </table>
@@ -294,8 +294,8 @@ Sec-WebSocket-Accept: BKr1C2HvcjQXjTltdn32ixsQmrc=</pre>
          <pre class="wirelog_tx_frame">003 TX FRAME : OPCODE=8, FIN=True, RSV=0, PAYLOAD-LEN=2, MASK=None, PAYLOAD-REPEAT-LEN=None, CHOPSIZE=None, SYNC=False</pre>
          <pre class="wirelog_tx_frame">               0x03e8</pre>
          <pre class="wirelog_tx_octets">004 TX OCTETS: 880203e8</pre>
-         <pre class="wirelog_rx_octets">005 RX OCTETS: 888aa833b0c4abdbf7abc15dd7e4c944d1bd</pre>
-         <pre class="wirelog_rx_frame">006 RX FRAME : OPCODE=8, FIN=True, RSV=0, PAYLOAD-LEN=10, MASKED=True, MASK=6138333362306334</pre>
+         <pre class="wirelog_rx_octets">005 RX OCTETS: 888a204e555a23a612354920327a41393423</pre>
+         <pre class="wirelog_rx_frame">006 RX FRAME : OPCODE=8, FIN=True, RSV=0, PAYLOAD-LEN=10, MASKED=True, MASK=3230346535353561</pre>
          <pre class="wirelog_rx_frame">               0x03e8476f696e67206177</pre>
          <pre class="wirelog_tcp_closed_by_me">007 TCP DROPPED BY ME</pre>
       </div>

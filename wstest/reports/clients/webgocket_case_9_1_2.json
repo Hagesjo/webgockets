@@ -8,7 +8,7 @@
    "createWirelog": true,
    "description": "Send text message message with payload of length 256 * 2**10 (256k).",
    "droppedByMe": true,
-   "duration": 34,
+   "duration": 30,
    "expectation": "Receive echo'ed text message (with payload as sent).",
    "expected": {},
    "expectedClose": {
@@ -19,8 +19,8 @@
       "requireClean": true
    },
    "failedByMe": false,
-   "httpRequest": "GET /runCase?case=103&agent=webgocket HTTP/1.1\r\nHost: 127.0.0.1:9001\r\nUser-Agent: Go-http-client/1.1\r\nConnection: Upgrade\r\nSec-Websocket-Key: NGzn0z2UBO+RBaraQK7hfQ==\r\nSec-Websocket-Protocol: chat, superchat\r\nSec-Websocket-Version: 13\r\nUpgrade: websocket\r\nAccept-Encoding: gzip\r\n\r\n",
-   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nServer: AutobahnTestSuite/0.8.2-0.10.9\r\nX-Powered-By: AutobahnPython/0.10.9\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: 7lQKNhq161VZ1sVn2O3hLe+RU0c=\r\n\r\n",
+   "httpRequest": "GET /runCase?case=103&agent=webgocket HTTP/1.1\r\nHost: 127.0.0.1:9001\r\nUser-Agent: Go-http-client/1.1\r\nConnection: Upgrade\r\nSec-Websocket-Key: QHec8kNQSGXVmMIh4SNCuw==\r\nSec-Websocket-Protocol: chat, superchat\r\nSec-Websocket-Version: 13\r\nUpgrade: websocket\r\nAccept-Encoding: gzip\r\n\r\n",
+   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nServer: AutobahnTestSuite/0.8.2-0.10.9\r\nX-Powered-By: AutobahnPython/0.10.9\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: bUzboD5mwahAl9gh3/wVRhr+0Dk=\r\n\r\n",
    "id": "9.1.2",
    "isServer": true,
    "localCloseCode": 1000,
@@ -40,11 +40,12 @@
       "18": 1,
       "281": 1,
       "14480": 1,
-      "22110": 1,
-      "28960": 1,
-      "65536": 3
+      "18288": 1,
+      "32768": 2,
+      "32782": 1,
+      "65536": 2
    },
-   "started": "2024-01-25T21:06:35.034Z",
+   "started": "2024-01-25T23:21:48.438Z",
    "trafficStats": null,
    "txFrameStats": {
       "1": 1,
@@ -106,7 +107,7 @@
          "RO",
          [
             18,
-            "888a9b2b374698c37029f2455066fa5c563f"
+            "888ab6489742b5a0d02ddf26f062d73ff63b"
          ]
       ],
       [
@@ -119,7 +120,7 @@
          true,
          0,
          true,
-         "9b2b3746"
+         "b6489742"
       ]
    ]
 }

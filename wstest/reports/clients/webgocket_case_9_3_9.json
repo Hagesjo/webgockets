@@ -8,7 +8,7 @@
    "createWirelog": true,
    "description": "Send fragmented text message message with message payload of length 4 * 2**20 (8M). Sent out in fragments of 4M.",
    "droppedByMe": true,
-   "duration": 294,
+   "duration": 311,
    "expectation": "Receive echo'ed text message (with payload as sent).",
    "expected": {},
    "expectedClose": {
@@ -19,8 +19,8 @@
       "requireClean": true
    },
    "failedByMe": false,
-   "httpRequest": "GET /runCase?case=122&agent=webgocket HTTP/1.1\r\nHost: 127.0.0.1:9001\r\nUser-Agent: Go-http-client/1.1\r\nConnection: Upgrade\r\nSec-Websocket-Key: WB/hc1ttI01RNH2NI4jCbg==\r\nSec-Websocket-Protocol: chat, superchat\r\nSec-Websocket-Version: 13\r\nUpgrade: websocket\r\nAccept-Encoding: gzip\r\n\r\n",
-   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nServer: AutobahnTestSuite/0.8.2-0.10.9\r\nX-Powered-By: AutobahnPython/0.10.9\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: T1EaPP2TuV63OJyhssUtjhVYmcA=\r\n\r\n",
+   "httpRequest": "GET /runCase?case=122&agent=webgocket HTTP/1.1\r\nHost: 127.0.0.1:9001\r\nUser-Agent: Go-http-client/1.1\r\nConnection: Upgrade\r\nSec-Websocket-Key: TYCW4aD25+APqkeGMa8fxg==\r\nSec-Websocket-Protocol: chat, superchat\r\nSec-Websocket-Version: 13\r\nUpgrade: websocket\r\nAccept-Encoding: gzip\r\n\r\n",
+   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nServer: AutobahnTestSuite/0.8.2-0.10.9\r\nX-Powered-By: AutobahnPython/0.10.9\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: sDMzytlXgyzyvq1bF2ljVkXtg4k=\r\n\r\n",
    "id": "9.3.9",
    "isServer": true,
    "localCloseCode": 1000,
@@ -40,13 +40,11 @@
       "18": 1,
       "281": 1,
       "14480": 1,
+      "22646": 1,
       "28424": 1,
-      "32768": 28,
-      "32782": 1,
-      "55400": 1,
-      "65536": 48
+      "65536": 63
    },
-   "started": "2024-01-25T21:06:44.604Z",
+   "started": "2024-01-25T23:21:56.961Z",
    "trafficStats": null,
    "txFrameStats": {
       "1": 1,
@@ -108,7 +106,7 @@
          "RO",
          [
             18,
-            "888a7ca9d3227f41944d15c7b4021ddeb25b"
+            "888a17782bcc14906ca37e164cec760f4ab5"
          ]
       ],
       [
@@ -121,7 +119,7 @@
          true,
          0,
          true,
-         "7ca9d322"
+         "17782bcc"
       ]
    ]
 }

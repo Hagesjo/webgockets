@@ -8,7 +8,7 @@
    "createWirelog": true,
    "description": "Send text message message with payload of length 8 * 2**20 (8M).",
    "droppedByMe": true,
-   "duration": 639,
+   "duration": 665,
    "expectation": "Receive echo'ed text message (with payload as sent).",
    "expected": {},
    "expectedClose": {
@@ -19,8 +19,8 @@
       "requireClean": true
    },
    "failedByMe": false,
-   "httpRequest": "GET /runCase?case=106&agent=webgocket HTTP/1.1\r\nHost: 127.0.0.1:9001\r\nUser-Agent: Go-http-client/1.1\r\nConnection: Upgrade\r\nSec-Websocket-Key: s/Mf7T7fZwvKNH0OojrltA==\r\nSec-Websocket-Protocol: chat, superchat\r\nSec-Websocket-Version: 13\r\nUpgrade: websocket\r\nAccept-Encoding: gzip\r\n\r\n",
-   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nServer: AutobahnTestSuite/0.8.2-0.10.9\r\nX-Powered-By: AutobahnPython/0.10.9\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: U/Cuy1BsGB/YQAxgSEp8Sw+xhWg=\r\n\r\n",
+   "httpRequest": "GET /runCase?case=106&agent=webgocket HTTP/1.1\r\nHost: 127.0.0.1:9001\r\nUser-Agent: Go-http-client/1.1\r\nConnection: Upgrade\r\nSec-Websocket-Key: 64pBPRJ3vOCeJI3zkjHwrw==\r\nSec-Websocket-Protocol: chat, superchat\r\nSec-Websocket-Version: 13\r\nUpgrade: websocket\r\nAccept-Encoding: gzip\r\n\r\n",
+   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nServer: AutobahnTestSuite/0.8.2-0.10.9\r\nX-Powered-By: AutobahnPython/0.10.9\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: oHOEb7AHJxOarXME1DaI3cbadu8=\r\n\r\n",
    "id": "9.1.5",
    "isServer": true,
    "localCloseCode": 1000,
@@ -39,11 +39,11 @@
    "rxOctetStats": {
       "18": 1,
       "281": 1,
-      "32768": 13,
+      "32768": 7,
       "32782": 1,
-      "65536": 121
+      "65536": 124
    },
-   "started": "2024-01-25T21:06:35.759Z",
+   "started": "2024-01-25T23:21:48.982Z",
    "trafficStats": null,
    "txFrameStats": {
       "1": 1,
@@ -105,7 +105,7 @@
          "RO",
          [
             18,
-            "888a8ef017598d185036e79e7079ef877620"
+            "888aae1cc4c4adf483abc772a3e4cf6ba5bd"
          ]
       ],
       [
@@ -118,7 +118,7 @@
          true,
          0,
          true,
-         "8ef01759"
+         "ae1cc4c4"
       ]
    ]
 }

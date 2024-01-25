@@ -8,7 +8,7 @@
    "createWirelog": true,
    "description": "Send 256K message followed by close then a ping",
    "droppedByMe": true,
-   "duration": 24,
+   "duration": 17,
    "expectation": "Case outcome depends on implementation defined close behavior. Message and close frame are sent back to back. If the close frame is processed before the text message write is complete (as can happen in asynchronous processing models) the close frame is processed first and the text message may not be received or may only be partially recieved.",
    "expected": {
       "NON-STRICT": [],
@@ -28,8 +28,8 @@
       "requireClean": true
    },
    "failedByMe": false,
-   "httpRequest": "GET /runCase?case=70&agent=webgocket HTTP/1.1\r\nHost: 127.0.0.1:9001\r\nUser-Agent: Go-http-client/1.1\r\nConnection: Upgrade\r\nSec-Websocket-Key: Cm2928bpsJeeVDqOrLAouQ==\r\nSec-Websocket-Protocol: chat, superchat\r\nSec-Websocket-Version: 13\r\nUpgrade: websocket\r\nAccept-Encoding: gzip\r\n\r\n",
-   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nServer: AutobahnTestSuite/0.8.2-0.10.9\r\nX-Powered-By: AutobahnPython/0.10.9\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: XNm8tlou8mUnWUcjtn29zXFBQeQ=\r\n\r\n",
+   "httpRequest": "GET /runCase?case=70&agent=webgocket HTTP/1.1\r\nHost: 127.0.0.1:9001\r\nUser-Agent: Go-http-client/1.1\r\nConnection: Upgrade\r\nSec-Websocket-Key: AG5dplHfM4Dy6q5w8zsaXw==\r\nSec-Websocket-Protocol: chat, superchat\r\nSec-Websocket-Version: 13\r\nUpgrade: websocket\r\nAccept-Encoding: gzip\r\n\r\n",
+   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nServer: AutobahnTestSuite/0.8.2-0.10.9\r\nX-Powered-By: AutobahnPython/0.10.9\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: Idn5NV+wk8EIf0DMeEZPquGQgkQ=\r\n\r\n",
    "id": "7.1.6",
    "isServer": true,
    "localCloseCode": 1000,
@@ -48,7 +48,7 @@
       "24": 1,
       "280": 1
    },
-   "started": "2024-01-25T21:06:32.243Z",
+   "started": "2024-01-25T23:21:45.921Z",
    "trafficStats": null,
    "txFrameStats": {
       "1": 2,
@@ -179,7 +179,7 @@
          "RO",
          [
             24,
-            "888a25bc074f265440204cd2606f44cb66368a808d9e3450"
+            "888ad6ec4882d5040fedbf822fa2b79b29fb8a80067e118a"
          ]
       ],
       [
@@ -192,7 +192,7 @@
          true,
          0,
          true,
-         "25bc074f"
+         "d6ec4882"
       ]
    ]
 }

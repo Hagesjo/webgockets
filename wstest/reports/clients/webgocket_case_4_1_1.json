@@ -21,8 +21,8 @@
       "requireClean": false
    },
    "failedByMe": false,
-   "httpRequest": "GET /runCase?case=35&agent=webgocket HTTP/1.1\r\nHost: 127.0.0.1:9001\r\nUser-Agent: Go-http-client/1.1\r\nConnection: Upgrade\r\nSec-Websocket-Key: HVGb4ipxUnSLgMSkIwaTZg==\r\nSec-Websocket-Protocol: chat, superchat\r\nSec-Websocket-Version: 13\r\nUpgrade: websocket\r\nAccept-Encoding: gzip\r\n\r\n",
-   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nServer: AutobahnTestSuite/0.8.2-0.10.9\r\nX-Powered-By: AutobahnPython/0.10.9\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: MMXJ7nb42B4dRSMG2lEl0C+6clU=\r\n\r\n",
+   "httpRequest": "GET /runCase?case=35&agent=webgocket HTTP/1.1\r\nHost: 127.0.0.1:9001\r\nUser-Agent: Go-http-client/1.1\r\nConnection: Upgrade\r\nSec-Websocket-Key: BBHgnliIxQL8krLLw2nuqw==\r\nSec-Websocket-Protocol: chat, superchat\r\nSec-Websocket-Version: 13\r\nUpgrade: websocket\r\nAccept-Encoding: gzip\r\n\r\n",
+   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nServer: AutobahnTestSuite/0.8.2-0.10.9\r\nX-Powered-By: AutobahnPython/0.10.9\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: M2PEMGKgvNZ/bNGRmslax6O8dZ4=\r\n\r\n",
    "id": "4.1.1",
    "isServer": true,
    "localCloseCode": null,
@@ -38,7 +38,7 @@
    "rxOctetStats": {
       "280": 1
    },
-   "started": "2024-01-25T21:06:27.024Z",
+   "started": "2024-01-25T23:21:39.045Z",
    "trafficStats": null,
    "txFrameStats": {
       "3": 1

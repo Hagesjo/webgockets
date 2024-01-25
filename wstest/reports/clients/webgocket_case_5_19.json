@@ -8,7 +8,7 @@
    "createWirelog": true,
    "description": "A fragmented text message is sent in multiple frames. After\n   sending the first 2 frames of the text message, a Ping is sent. Then we wait 1s,\n   then we send 2 more text fragments, another Ping and then the final text fragment.\n   Everything is legal.",
    "droppedByMe": true,
-   "duration": 1044,
+   "duration": 1042,
    "expectation": "The peer immediately answers the first Ping before\n   it has received the last text message fragment. The peer pong's back the Ping's\n   payload exactly, and echo's the payload of the fragmented message back to us.",
    "expected": {
       "OK": [
@@ -35,8 +35,8 @@
       "requireClean": true
    },
    "failedByMe": false,
-   "httpRequest": "GET /runCase?case=63&agent=webgocket HTTP/1.1\r\nHost: 127.0.0.1:9001\r\nUser-Agent: Go-http-client/1.1\r\nConnection: Upgrade\r\nSec-Websocket-Key: Kqyzvu274r0NCMHUvMdt5g==\r\nSec-Websocket-Protocol: chat, superchat\r\nSec-Websocket-Version: 13\r\nUpgrade: websocket\r\nAccept-Encoding: gzip\r\n\r\n",
-   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nServer: AutobahnTestSuite/0.8.2-0.10.9\r\nX-Powered-By: AutobahnPython/0.10.9\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: b7fPRNN4kZPkI3CEUiTj00DAOCw=\r\n\r\n",
+   "httpRequest": "GET /runCase?case=63&agent=webgocket HTTP/1.1\r\nHost: 127.0.0.1:9001\r\nUser-Agent: Go-http-client/1.1\r\nConnection: Upgrade\r\nSec-Websocket-Key: Z3UygH5u00mUJYSdwCPCXQ==\r\nSec-Websocket-Protocol: chat, superchat\r\nSec-Websocket-Version: 13\r\nUpgrade: websocket\r\nAccept-Encoding: gzip\r\n\r\n",
+   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nServer: AutobahnTestSuite/0.8.2-0.10.9\r\nX-Powered-By: AutobahnPython/0.10.9\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: 2K9Xh7nZZrbJ04YXmviSp+jOyaA=\r\n\r\n",
    "id": "5.19",
    "isServer": true,
    "localCloseCode": 1000,
@@ -73,7 +73,7 @@
       "66": 1,
       "280": 1
    },
-   "started": "2024-01-25T21:06:28.672Z",
+   "started": "2024-01-25T23:21:41.631Z",
    "trafficStats": null,
    "txFrameStats": {
       "0": 4,
@@ -182,7 +182,7 @@
          "RO",
          [
             15,
-            "8a89d825853aa84aeb5db540a50bf9"
+            "8a899d990932edf66755f0fc2903bc"
          ]
       ],
       [
@@ -195,7 +195,7 @@
          true,
          0,
          true,
-         "d825853a"
+         "9d990932"
       ],
       [
          "CTE",
@@ -297,7 +297,7 @@
          "RO",
          [
             66,
-            "8a898b050bcafb6a65ade6602bf8aa81ada41e31afc26c50c8c97b5fdb957843cec37354c1d02c57ddc5795ccaca6a02c9d67f56c2c170459bc26c50c8c97b5f ..."
+            "8a8910cf145060a07a377daa34623181ad1f9a0b6b79e86a0c72ff651f2efc790a78f76e056ba86d197efd660e71ee380d6dfb6c067af47f5f79e86a0c72ff65 ..."
          ]
       ],
       [
@@ -310,7 +310,7 @@
          true,
          0,
          true,
-         "8b050bca"
+         "10cf1450"
       ],
       [
          "RF",
@@ -322,7 +322,7 @@
          true,
          0,
          true,
-         "a41e31af"
+         "1f9a0b6b"
       ],
       [
          "TF",
@@ -350,7 +350,7 @@
          "RO",
          [
             18,
-            "888a218760e0226f278f48e907c040f00199"
+            "888a63d61e7e603e59110ab8795e02a17f07"
          ]
       ],
       [
@@ -363,7 +363,7 @@
          true,
          0,
          true,
-         "218760e0"
+         "63d61e7e"
       ]
    ]
 }

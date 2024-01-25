@@ -8,7 +8,7 @@
    "createWirelog": true,
    "description": "Send text message message with payload of length 1 * 2**20 (1M). Sent out data in chops of 128 octets.",
    "droppedByMe": true,
-   "duration": 490,
+   "duration": 459,
    "expectation": "Receive echo'ed text message (with payload as sent).",
    "expected": {},
    "expectedClose": {
@@ -19,8 +19,8 @@
       "requireClean": true
    },
    "failedByMe": false,
-   "httpRequest": "GET /runCase?case=133&agent=webgocket HTTP/1.1\r\nHost: 127.0.0.1:9001\r\nUser-Agent: Go-http-client/1.1\r\nConnection: Upgrade\r\nSec-Websocket-Key: lnbwFIpHpa7QZGl0gZTv9w==\r\nSec-Websocket-Protocol: chat, superchat\r\nSec-Websocket-Version: 13\r\nUpgrade: websocket\r\nAccept-Encoding: gzip\r\n\r\n",
-   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nServer: AutobahnTestSuite/0.8.2-0.10.9\r\nX-Powered-By: AutobahnPython/0.10.9\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: kUlpKFaGD6gYGg3+ULaw3xPu/Wc=\r\n\r\n",
+   "httpRequest": "GET /runCase?case=133&agent=webgocket HTTP/1.1\r\nHost: 127.0.0.1:9001\r\nUser-Agent: Go-http-client/1.1\r\nConnection: Upgrade\r\nSec-Websocket-Key: y8p/z2Ntm7Rg2/jQqZaf0Q==\r\nSec-Websocket-Protocol: chat, superchat\r\nSec-Websocket-Version: 13\r\nUpgrade: websocket\r\nAccept-Encoding: gzip\r\n\r\n",
+   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nServer: AutobahnTestSuite/0.8.2-0.10.9\r\nX-Powered-By: AutobahnPython/0.10.9\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: uGmzNSw1Ppb58AtfV50UAxSqI/8=\r\n\r\n",
    "id": "9.5.2",
    "isServer": true,
    "localCloseCode": 1000,
@@ -39,11 +39,11 @@
    "rxOctetStats": {
       "18": 1,
       "281": 1,
-      "32768": 5,
+      "32768": 9,
       "32782": 1,
-      "65536": 13
+      "65536": 11
    },
-   "started": "2024-01-25T21:06:50.293Z",
+   "started": "2024-01-25T23:22:01.555Z",
    "trafficStats": null,
    "txFrameStats": {
       "1": 1,
@@ -106,7 +106,7 @@
          "RO",
          [
             18,
-            "888ab817dd51bbff9a3ed179ba71d960bc28"
+            "888a364ccfbc35a488d35f22a89c573baec5"
          ]
       ],
       [
@@ -119,7 +119,7 @@
          true,
          0,
          true,
-         "b817dd51"
+         "364ccfbc"
       ]
    ]
 }

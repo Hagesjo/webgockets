@@ -8,7 +8,7 @@
    "createWirelog": true,
    "description": "Send text message message with payload of length 64 * 2**10 (64k).",
    "droppedByMe": true,
-   "duration": 17,
+   "duration": 14,
    "expectation": "Receive echo'ed text message (with payload as sent).",
    "expected": {},
    "expectedClose": {
@@ -19,8 +19,8 @@
       "requireClean": true
    },
    "failedByMe": false,
-   "httpRequest": "GET /runCase?case=102&agent=webgocket HTTP/1.1\r\nHost: 127.0.0.1:9001\r\nUser-Agent: Go-http-client/1.1\r\nConnection: Upgrade\r\nSec-Websocket-Key: ldBjhohJuZo46sLI0Y2cxA==\r\nSec-Websocket-Protocol: chat, superchat\r\nSec-Websocket-Version: 13\r\nUpgrade: websocket\r\nAccept-Encoding: gzip\r\n\r\n",
-   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nServer: AutobahnTestSuite/0.8.2-0.10.9\r\nX-Powered-By: AutobahnPython/0.10.9\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: ErnuRg0YacHrLOpyD8ZUHZYZuS4=\r\n\r\n",
+   "httpRequest": "GET /runCase?case=102&agent=webgocket HTTP/1.1\r\nHost: 127.0.0.1:9001\r\nUser-Agent: Go-http-client/1.1\r\nConnection: Upgrade\r\nSec-Websocket-Key: tdbKudBLGEwKfJ90aUb9XQ==\r\nSec-Websocket-Protocol: chat, superchat\r\nSec-Websocket-Version: 13\r\nUpgrade: websocket\r\nAccept-Encoding: gzip\r\n\r\n",
+   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nServer: AutobahnTestSuite/0.8.2-0.10.9\r\nX-Powered-By: AutobahnPython/0.10.9\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: tdXEuMOh1DFn7fB0ftCcGTMzqJU=\r\n\r\n",
    "id": "9.1.1",
    "isServer": true,
    "localCloseCode": 1000,
@@ -40,10 +40,10 @@
       "18": 1,
       "281": 1,
       "14480": 1,
-      "22110": 1,
-      "28960": 1
+      "22646": 1,
+      "28424": 1
    },
-   "started": "2024-01-25T21:06:35.010Z",
+   "started": "2024-01-25T23:21:48.416Z",
    "trafficStats": null,
    "txFrameStats": {
       "1": 1,
@@ -105,7 +105,7 @@
          "RO",
          [
             18,
-            "888a537ccadb50948db43a12adfb320baba2"
+            "888a42ac8d2b4144ca442bc2ea0b23dbec52"
          ]
       ],
       [
@@ -118,7 +118,7 @@
          true,
          0,
          true,
-         "537ccadb"
+         "42ac8d2b"
       ]
    ]
 }

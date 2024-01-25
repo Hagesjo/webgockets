@@ -8,7 +8,7 @@
    "createWirelog": true,
    "description": "Send binary message message with payload of length 8 * 2**20 (16M).",
    "droppedByMe": true,
-   "duration": 802,
+   "duration": 775,
    "expectation": "Receive echo'ed binary message (with payload as sent).",
    "expected": {},
    "expectedClose": {
@@ -19,8 +19,8 @@
       "requireClean": true
    },
    "failedByMe": false,
-   "httpRequest": "GET /runCase?case=112&agent=webgocket HTTP/1.1\r\nHost: 127.0.0.1:9001\r\nUser-Agent: Go-http-client/1.1\r\nConnection: Upgrade\r\nSec-Websocket-Key: dB/8HmbFPn6gPPrzBXo1rQ==\r\nSec-Websocket-Protocol: chat, superchat\r\nSec-Websocket-Version: 13\r\nUpgrade: websocket\r\nAccept-Encoding: gzip\r\n\r\n",
-   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nServer: AutobahnTestSuite/0.8.2-0.10.9\r\nX-Powered-By: AutobahnPython/0.10.9\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: RkfJJx4KShgEI5rZ67sWdXhY/1A=\r\n\r\n",
+   "httpRequest": "GET /runCase?case=112&agent=webgocket HTTP/1.1\r\nHost: 127.0.0.1:9001\r\nUser-Agent: Go-http-client/1.1\r\nConnection: Upgrade\r\nSec-Websocket-Key: YuIgw4cdM0cL/c3AMexa7Q==\r\nSec-Websocket-Protocol: chat, superchat\r\nSec-Websocket-Version: 13\r\nUpgrade: websocket\r\nAccept-Encoding: gzip\r\n\r\n",
+   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nServer: AutobahnTestSuite/0.8.2-0.10.9\r\nX-Powered-By: AutobahnPython/0.10.9\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: CnyIeSjm2nbV1afjiyfVwE5EpaQ=\r\n\r\n",
    "id": "9.2.5",
    "isServer": true,
    "localCloseCode": 1000,
@@ -39,11 +39,12 @@
    "rxOctetStats": {
       "18": 1,
       "281": 1,
-      "32768": 43,
-      "32782": 1,
-      "65536": 106
+      "2574": 1,
+      "7240": 1,
+      "55736": 1,
+      "65536": 127
    },
-   "started": "2024-01-25T21:06:38.772Z",
+   "started": "2024-01-25T23:21:51.641Z",
    "trafficStats": null,
    "txFrameStats": {
       "2": 1,
@@ -105,7 +106,7 @@
          "RO",
          [
             18,
-            "888a53f463d1501c24be3a9a04f1328302a8"
+            "888a2398928e2070d5e14af6f5ae42eff3f7"
          ]
       ],
       [
@@ -118,7 +119,7 @@
          true,
          0,
          true,
-         "53f463d1"
+         "2398928e"
       ]
    ]
 }

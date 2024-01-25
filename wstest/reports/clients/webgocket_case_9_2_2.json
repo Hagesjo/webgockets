@@ -8,7 +8,7 @@
    "createWirelog": true,
    "description": "Send binary message message with payload of length 256 * 2**10 (256k).",
    "droppedByMe": true,
-   "duration": 34,
+   "duration": 35,
    "expectation": "Receive echo'ed binary message (with payload as sent).",
    "expected": {},
    "expectedClose": {
@@ -19,8 +19,8 @@
       "requireClean": true
    },
    "failedByMe": false,
-   "httpRequest": "GET /runCase?case=109&agent=webgocket HTTP/1.1\r\nHost: 127.0.0.1:9001\r\nUser-Agent: Go-http-client/1.1\r\nConnection: Upgrade\r\nSec-Websocket-Key: ch/fg67xNBaJS4o0naPaWw==\r\nSec-Websocket-Protocol: chat, superchat\r\nSec-Websocket-Version: 13\r\nUpgrade: websocket\r\nAccept-Encoding: gzip\r\n\r\n",
-   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nServer: AutobahnTestSuite/0.8.2-0.10.9\r\nX-Powered-By: AutobahnPython/0.10.9\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: NcTf/GtBWmNU1s+MrSrN3LL6aHk=\r\n\r\n",
+   "httpRequest": "GET /runCase?case=109&agent=webgocket HTTP/1.1\r\nHost: 127.0.0.1:9001\r\nUser-Agent: Go-http-client/1.1\r\nConnection: Upgrade\r\nSec-Websocket-Key: j2S94XH6q4/ODKGqb+N3QQ==\r\nSec-Websocket-Protocol: chat, superchat\r\nSec-Websocket-Version: 13\r\nUpgrade: websocket\r\nAccept-Encoding: gzip\r\n\r\n",
+   "httpResponse": "HTTP/1.1 101 Switching Protocols\r\nServer: AutobahnTestSuite/0.8.2-0.10.9\r\nX-Powered-By: AutobahnPython/0.10.9\r\nUpgrade: WebSocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: N1ZmfLUQ6F/u+UmJBkqyQtjPx/g=\r\n\r\n",
    "id": "9.2.2",
    "isServer": true,
    "localCloseCode": 1000,
@@ -40,12 +40,12 @@
       "18": 1,
       "281": 1,
       "14480": 1,
-      "28960": 1,
+      "18288": 1,
       "32768": 4,
       "32782": 1,
-      "54864": 1
+      "65536": 1
    },
-   "started": "2024-01-25T21:06:38.253Z",
+   "started": "2024-01-25T23:21:51.124Z",
    "trafficStats": null,
    "txFrameStats": {
       "2": 1,
@@ -107,7 +107,7 @@
          "RO",
          [
             18,
-            "888a9e7ca73d9d94e052f712c01dff0bc644"
+            "888a50e9d5f6530192993987b2d6319eb48f"
          ]
       ],
       [
@@ -120,7 +120,7 @@
          true,
          0,
          true,
-         "9e7ca73d"
+         "50e9d5f6"
       ]
    ]
 }
