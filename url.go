@@ -11,7 +11,7 @@ func validateURL(u string) (*url.URL, error) {
 		return nil, fmt.Errorf("failed to parse url: %w", err)
 	}
 
-	if parsed.Scheme != "ws" {
+	if parsed.Scheme != "ws" && parsed.Scheme != "wss" {
 		return nil, fmt.Errorf("invalid scheme, expected ws")
 	}
 
