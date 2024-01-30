@@ -93,12 +93,23 @@ func (c *Client) handshake() (io.ReadWriteCloser, error) {
 	}
 
 	expectedHeaders := map[string]string{
-		"Upgrade":              "WebSocket",
-		"Connection":           "Upgrade",
-		"Sec-Websocket-Accept": expectedAcceptKey,
+		"Upgrade":    "websocket",
+		"Connection": "upgrade",
 	}
 
 	for header, value := range expectedHeaders {
+		h := strings.ToLower(resp.Header.Get(header))
+		if h != value {
+			return nil, fmt.Errorf("unexpected header %s: %s, wanted %s", header, h, value)
+		}
+	}
+
+	// Case sensitive.
+	expectedExactHeaders := map[string]string{
+		"Sec-Websocket-Accept": expectedAcceptKey,
+	}
+
+	for header, value := range expectedExactHeaders {
 		h := resp.Header.Get(header)
 		if h != value {
 			return nil, fmt.Errorf("unexpected header %s: %s, wanted %s", header, h, value)
@@ -117,6 +128,11 @@ func (c *Client) handshake() (io.ReadWriteCloser, error) {
 func (c *Client) Read() ([]byte, error) {
 	payload, _, err := c.read()
 	return payload, err
+}
+
+func (c *Client) ReadString() (string, error) {
+	bs, err := c.Read()
+	return string(bs), err
 }
 
 func (c *Client) read() ([]byte, OpCode, error) {
@@ -269,6 +285,10 @@ func (c *Client) sendClose(statusCode uint16) error {
 	}
 
 	return nil
+}
+
+func (c *Client) WriteString(str string) (int, error) {
+	return c.Write([]byte(str))
 }
 
 // Write writes a text frame.
