@@ -23,14 +23,3 @@ func ReadJSON[T any](client *Client) (*T, error) {
 
 	return &ret, nil
 }
-
-// WriteJSON writes a text frame with marshaled bytes from the given json struct.
-// Ideally, this should be a method to the client, but due to go limitations with generic methods, we can't do that for now.
-func WriteJSON[T any](client *Client, jsonData *T) (int, error) {
-	bs, err := json.Marshal(jsonData)
-	if err != nil {
-		return 0, fmt.Errorf("invalid json: %w", err)
-	}
-
-	return client.Write(bs)
-}

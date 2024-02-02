@@ -1,6 +1,7 @@
 package webgockets
 
 import (
+	"encoding/json"
 	"errors"
 	"fmt"
 	"io"
@@ -294,6 +295,16 @@ func (c *Client) WriteString(str string) (int, error) {
 // Write writes a text frame.
 func (c *Client) Write(bs []byte) (int, error) {
 	return c.write(bs, OpcodeTextFrame)
+}
+
+// WriteJSON writes a text frame with marshaled bytes from the given json struct.
+func (c *Client) WriteJSON(jsonData any) (int, error) {
+	bs, err := json.Marshal(jsonData)
+	if err != nil {
+		return 0, fmt.Errorf("invalid json: %w", err)
+	}
+
+	return c.Write(bs)
 }
 
 // WriteBinary writes a binary frame
