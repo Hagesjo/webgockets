@@ -7,8 +7,6 @@ import (
 	"log/slog"
 	"os"
 	"testing"
-
-	"github.com/stretchr/testify/require"
 )
 
 func TestAll(t *testing.T) {
@@ -91,8 +89,6 @@ func testPerformance(t *testing.T) {
 func runTest(t *testing.T, caseN int) {
 	logger := slog.New(slog.NewJSONHandler(os.Stdout, nil))
 
-	require := require.New(t)
-
 	logger.Info("Running", "case", caseN)
 
 	c, err := NewClient(fmt.Sprintf("ws://127.0.0.1:9001/runCase?case=%d&agent=webgocket", caseN))
@@ -101,16 +97,17 @@ func runTest(t *testing.T, caseN int) {
 	}
 
 	if err := c.Connect(); err != nil {
-		require.NoError(err)
+		t.Error(err)
 	}
 
 	for {
+		var closeErr *ErrClose
 		payload, opcode, err := c.read()
-		if errors.Is(err, io.EOF) {
+		if errors.As(err, &closeErr) {
 			break
+		} else if err != nil {
+			t.Error(err.Error())
 		}
-
-		require.NoError(err)
 
 		if _, err := c.write(payload, opcode); err != nil && errors.Is(err, io.EOF) {
 			break

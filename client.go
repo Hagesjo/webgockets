@@ -157,6 +157,30 @@ func (c *Client) read() ([]byte, OpCode, error) {
 	return payload, opcode, nil
 }
 
+func (c *Client) getFrame() (frame, error) {
+	f, ok := <-c.frames
+	if !ok {
+		return frame{}, &ErrClose{}
+	}
+
+	for f.IsControl() {
+		if err := c.controlHandler(f); err != nil {
+			return frame{}, err
+		}
+
+		if f.Opcode == OpcodeConnectionClose {
+			return frame{}, &ErrClose{Code: f.CloseStatusCode, Payload: string(f.Payload)}
+		}
+
+		f, ok = <-c.frames
+		if !ok {
+			return frame{}, &ErrClose{}
+		}
+	}
+
+	return f, nil
+}
+
 func (c *Client) readHandler() error {
 	for {
 		frame, err := c.readFrame()
@@ -198,24 +222,13 @@ func (c *Client) readFrame() (frame, error) {
 	return f, nil
 }
 
-func (c *Client) getFrame() (frame, error) {
-	f, ok := <-c.frames
-	if !ok {
-		return frame{}, io.EOF
-	}
+type ErrClose struct {
+	Code    uint16
+	Payload string
+}
 
-	for f.IsControl() {
-		if err := c.controlHandler(f); err != nil {
-			return frame{}, err
-		}
-
-		f, ok = <-c.frames
-		if !ok {
-			return frame{}, io.EOF
-		}
-	}
-
-	return f, nil
+func (e *ErrClose) Error() string {
+	return fmt.Sprintf("%d: %s", e.Code, e.Payload)
 }
 
 func (c *Client) controlHandler(frame frame) error {

@@ -3,7 +3,9 @@
 A websocket client implementation in go.
 
 ## Example
+
 A simple echo example
+
 ```
 c, err := NewClient("ws://example.com")
 if err != nil {
@@ -15,8 +17,9 @@ if err := c.Connect(); err != nil {
 }
 
 for {
+    var closeErr *webgockets.ErrClose
     bs, err := c.Read()
-    if errors.Is(err, io.EOF) { // Connection closed.
+    if errors.As(err, &closeErr) { // Connection closed.
         break
     } else if err != nil {
         // Handle error.
