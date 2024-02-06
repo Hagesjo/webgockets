@@ -19,6 +19,10 @@ type Client struct {
 	frames  chan frame
 	// fragmented indicates that the current frames being received is fragmented.
 	fragmented bool
+
+	// closeErr is set as soon as a close frame has been received.
+	// It's needed since we want to be able to return the same close error everywhere.
+	closeErr ErrClose
 }
 
 // NewClient validates the wsURL and creates a new Client.
@@ -160,7 +164,7 @@ func (c *Client) read() ([]byte, OpCode, error) {
 func (c *Client) getFrame() (frame, error) {
 	f, ok := <-c.frames
 	if !ok {
-		return frame{}, &ErrClose{}
+		return frame{}, &c.closeErr
 	}
 
 	for f.IsControl() {
@@ -169,12 +173,13 @@ func (c *Client) getFrame() (frame, error) {
 		}
 
 		if f.Opcode == OpcodeConnectionClose {
-			return frame{}, &ErrClose{Code: f.CloseStatusCode, Payload: string(f.Payload)}
+			c.closeErr = ErrClose{Code: f.CloseStatusCode, Payload: string(f.Payload)}
+			return frame{}, &c.closeErr
 		}
 
 		f, ok = <-c.frames
 		if !ok {
-			return frame{}, &ErrClose{}
+			return frame{}, &c.closeErr
 		}
 	}
 
@@ -238,6 +243,8 @@ func (c *Client) controlHandler(frame frame) error {
 	case OpcodePing:
 		return c.sendPong(frame.Payload)
 	case OpcodeConnectionClose:
+		c.closeErr.Code = frame.CloseStatusCode
+		c.closeErr.Payload = string(frame.Payload)
 		return c.sendClose(frame.CloseStatusCode)
 	default:
 		return fmt.Errorf("unknown op code %d", frame.Opcode)
@@ -343,7 +350,7 @@ func (c *Client) write(bs []byte, opCode OpCode) (int, error) {
 
 	n, err := c.socket.Write(frameBs)
 	if err != nil && strings.Contains(err.Error(), "use of closed network connection") {
-		return n, io.EOF
+		return n, &c.closeErr
 	}
 
 	return 0, err
