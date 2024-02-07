@@ -1,6 +1,7 @@
 package webgockets
 
 import (
+	"context"
 	"errors"
 	"fmt"
 	"io"
@@ -100,9 +101,10 @@ func runTest(t *testing.T, caseN int) {
 		t.Error(err)
 	}
 
+	ctx := context.Background()
 	for {
 		var closeErr *ErrClose
-		payload, opcode, err := c.read()
+		payload, opcode, err := c.read(ctx)
 		if errors.As(err, &closeErr) {
 			break
 		} else if err != nil {

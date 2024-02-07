@@ -1,6 +1,7 @@
 package webgockets
 
 import (
+	"context"
 	"encoding/json"
 	"errors"
 	"fmt"
@@ -129,19 +130,19 @@ func (c *Client) handshake() (io.ReadWriteCloser, error) {
 	return w, nil
 }
 
-// Read reads a non-fragmented frame, or concatenates the payload of multiple fragmented frames.
-func (c *Client) Read() ([]byte, error) {
-	payload, _, err := c.read()
-	return payload, err
-}
-
-func (c *Client) ReadString() (string, error) {
-	bs, err := c.Read()
+func (c *Client) ReadString(ctx context.Context) (string, error) {
+	bs, err := c.Read(ctx)
 	return string(bs), err
 }
 
-func (c *Client) read() ([]byte, OpCode, error) {
-	frame, err := c.getFrame()
+// Read reads a non-fragmented frame, or concatenates the payload of multiple fragmented frames.
+func (c *Client) Read(ctx context.Context) ([]byte, error) {
+	payload, _, err := c.read(ctx)
+	return payload, err
+}
+
+func (c *Client) read(ctx context.Context) ([]byte, OpCode, error) {
+	frame, err := c.getFrame(ctx)
 	if err != nil {
 		return nil, 0, err
 	}
@@ -150,7 +151,7 @@ func (c *Client) read() ([]byte, OpCode, error) {
 	opcode := frame.Opcode
 
 	for !frame.Fin {
-		frame, err = c.getFrame()
+		frame, err = c.getFrame(ctx)
 		if err != nil {
 			return nil, 0, err
 		}
@@ -161,29 +162,33 @@ func (c *Client) read() ([]byte, OpCode, error) {
 	return payload, opcode, nil
 }
 
-func (c *Client) getFrame() (frame, error) {
-	f, ok := <-c.frames
-	if !ok {
-		return frame{}, &c.closeErr
-	}
-
-	for f.IsControl() {
-		if err := c.controlHandler(f); err != nil {
-			return frame{}, err
-		}
-
-		if f.Opcode == OpcodeConnectionClose {
-			c.closeErr = ErrClose{Code: f.CloseStatusCode, Payload: string(f.Payload)}
-			return frame{}, &c.closeErr
-		}
-
-		f, ok = <-c.frames
+func (c *Client) getFrame(ctx context.Context) (frame, error) {
+	select {
+	case <-ctx.Done():
+		return frame{}, ctx.Err()
+	case f, ok := <-c.frames:
 		if !ok {
 			return frame{}, &c.closeErr
 		}
-	}
 
-	return f, nil
+		for f.IsControl() {
+			if err := c.controlHandler(f); err != nil {
+				return frame{}, err
+			}
+
+			if f.Opcode == OpcodeConnectionClose {
+				c.closeErr = ErrClose{Code: f.CloseStatusCode, Payload: string(f.Payload)}
+				return frame{}, &c.closeErr
+			}
+
+			f, ok = <-c.frames
+			if !ok {
+				return frame{}, &c.closeErr
+			}
+		}
+
+		return f, nil
+	}
 }
 
 func (c *Client) readHandler() error {
